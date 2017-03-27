@@ -107,7 +107,7 @@ describe 'Hooks worker client', ->
 
     it 'should not set the error on worker if process gets intentionally killed by Dredd ' +
     'because it can be killed after all hooks execution if SIGTERM isn\'t handled', (done) ->
-      runner.hooks.configuration.options.language = "#{COFFEE_BIN} test/fixtures/scripts/endless-nosigterm.coffee"
+      runner.hooks.configuration.options.language = "#{COFFEE_BIN} test/fixtures/scripts/endless-ignore-term.coffee"
       loadWorkerClient (workerError) ->
         return done workerError if workerError
 
